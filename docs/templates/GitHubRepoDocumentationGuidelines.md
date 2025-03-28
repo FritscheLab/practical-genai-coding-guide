@@ -191,4 +191,4 @@ Date: <DD/MM/YYYY>
 
 ## Repository Name
 
-Before generating the **README.md** and **/doc/<tool>.md** files, please generate 5 suitable names for this repository then ask me to provide my choice for the **repository name**.
+Before generating the **README.md** and **/doc/<tool>.md** files, please generate 5 suitable names for this repository then ask me to provide my choice for the **repository name**, unless I have already provided it.

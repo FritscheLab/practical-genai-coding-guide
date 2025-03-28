@@ -12,7 +12,7 @@ Finally, before you even begin to prompt an LLM, it is essential to **set succes
 
 Even at this initial planning stage, LLMs themselves can be valuable tools. You can **leverage LLMs in the planning phase** by prompting them to help brainstorm potential sub-tasks or to consider challenges you might encounter. For example, you could ask: "Based on the goal of harmonizing BMI data from EHR files, what are the typical sub-tasks involved in data cleaning and summarization?" The responses from the LLM can offer valuable suggestions and help you structure your workflow more effectively.
 
-In essence, this foundational planning phase is crucial for setting the stage for effective LLM utilization. A well-defined plan, coupled with a thorough understanding of the context, will guide your subsequent interactions with the AI assistant and ensure that the generated code and analysis are relevant, accurate, and aligned with your research objectives. As the speaker notes for this step emphasize, clarity at this stage ensures that both you and the AI are working toward solving the right problem.
+In essence, this foundational planning phase is crucial for setting the stage for effective LLM utilization. A well-defined plan, coupled with a thorough understanding of the context, will guide your subsequent interactions with the AI assistant and ensure that the generated code and analysis are relevant, accurate, and aligned with your research objectives. Clarity at this stage ensures that both you and the AI are working toward solving the right problem.
 
 ---
 
