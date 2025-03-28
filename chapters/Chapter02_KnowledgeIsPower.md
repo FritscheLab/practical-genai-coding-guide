@@ -6,13 +6,21 @@ Furthermore, it is important to take this time to **clarify uncertainties** that
 
 ## Considering Edge Cases in Category Definitions
 
-It is also crucial to recognize that **human-friendly definitions** for categories (like “Obesity class 2: 35 ≤ BMI < 40”) may not translate neatly into code. From a human perspective, a BMI of 34.95 might clearly be considered **below** 35, yet an LLM or a simple conditional check might mistakenly assign it to the wrong bin if the condition is written incorrectly (e.g., `bmi >= 35` when you meant `bmi >= 35.0`).  
+It is also crucial to recognize that **human-friendly definitions** for categories (like “Obesity class 2: **35 kg/m<sup>2</sup> to 39.9 kg/m<sup>2</sup>**”) may not translate neatly into code. Official guidelines often list the upper limit as a single decimal like **39.9**. But from a coding perspective, you might represent that boundary as **< 40.0** or **≤ 39.9**, each of which can alter how borderline values are classified.
 
-- **Pick Your Inequalities Carefully:** Decide whether to use `<` or `≤` for each threshold so the code consistently reflects your chosen guidelines.  
-- **Document the Bins Explicitly:** In your data dictionary or user manual, specify how you handle borderline values. For instance, if the “Obesity class 2” category starts at exactly 35.0, ensure your code or algorithm states `bmi >= 35`. If you plan to floor or round the BMI before classification, that also needs to be documented.  
-- **Re-check Real-World Ranges:** A typical classification system might say “Obesity class 2 = BMI 35–39.9,” but your code must be explicit. Will a BMI of 39.95 be considered under 40, or do you round up? Clarify any rounding approach.
+For example, a real-valued BMI of **39.95** is **less than 40**—which might suggest it belongs in the 35–39.9 bin from a human perspective—but it is also **greater than 39.9** if you compare it literally. Depending on how your code or LLM-generated logic interprets the boundary, you could misclassify or not classify this measurement at all:
 
-Such attention to detail prevents **unresolvable edge cases** where the code’s binning disagrees with the intended clinical guideline, leading to misclassification and confusion.
+- **Rounding vs. Exact Floats:** If you floor BMI to one decimal place, `39.95` becomes `40.0`, thus pushing it out of the 35–39.9 category (contrary to the guideline’s intended 39.9 upper limit).  
+- **Choosing `<` vs. `<=`:** If your logic says `bmi <= 39.9` for Obesity class 2, then 39.95 is excluded. But if you code it as `bmi < 40`, 39.95 is included.  
+- **Guideline vs. Code Reality:** Guidelines often say “39.9” to highlight that 40.0+ is a higher risk category (Obesity class 3). In code, you may prefer `< 40` for clarity and to avoid floating-point confusion.
+
+### Suggestions for Handling These Subtleties
+
+1. **Be Explicit About Boundaries:** Decide whether to interpret a textual cutoff like “39.9” as `<= 39.9` or `< 40.0`. Document this thoroughly so that future analysts understand the rationale.  
+2. **Consider Rounding:** If your data is recorded at multiple decimals (e.g., 39.95) but guidelines show a single decimal, clarify how (or if) you round before classification.  
+3. **Align Code With Human Logic:** For most clinical or epidemiological scenarios, using `< 40` (rather than `<= 39.9`) better reflects the guideline’s intention without risking floating-point mismatch. Still, you should confirm that this tiny difference does not conflict with domain expectations.
+
+Such attention to detail prevents **unresolvable edge cases** in which the code’s binning disagrees with the intended clinical guideline, leading to misclassification and confusion. Always keep in mind that **guidelines are written for humans**, while your code needs precise comparisons for borderline values. This ensures both clinicians and data scientists understand how an exact BMI of 39.95 is ultimately categorized.
 
 ## Incorporating Authoritative Guidelines
 
