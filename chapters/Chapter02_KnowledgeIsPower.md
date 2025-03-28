@@ -4,6 +4,16 @@ With a solid plan and a clear understanding of the context established, the next
 
 Furthermore, it is important to take this time to **clarify uncertainties** that might exist regarding the task at hand [8](../docs/References.md#ref8). Before we ask an LLM for code, we should strive to resolve any ambiguities or domain-specific questions we might have. In our BMI example, this could involve determining what range of BMI values would be considered implausible and should be filtered out, or deciding on the most appropriate method for selecting a single representative BMI measurement for each person if multiple measurements exist in the EHR data. Addressing these uncertainties upfront will lead to more focused and effective prompts when we eventually interact with the LLM.
 
+## Considering Edge Cases in Category Definitions
+
+It is also crucial to recognize that **human-friendly definitions** for categories (like “Obesity class 2: 35 ≤ BMI < 40”) may not translate neatly into code. From a human perspective, a BMI of 34.95 might clearly be considered **below** 35, yet an LLM or a simple conditional check might mistakenly assign it to the wrong bin if the condition is written incorrectly (e.g., `bmi >= 35` when you meant `bmi >= 35.0`).  
+
+- **Pick Your Inequalities Carefully:** Decide whether to use `<` or `≤` for each threshold so the code consistently reflects your chosen guidelines.  
+- **Document the Bins Explicitly:** In your data dictionary or user manual, specify how you handle borderline values. For instance, if the “Obesity class 2” category starts at exactly 35.0, ensure your code or algorithm states `bmi >= 35`. If you plan to floor or round the BMI before classification, that also needs to be documented.  
+- **Re-check Real-World Ranges:** A typical classification system might say “Obesity class 2 = BMI 35–39.9,” but your code must be explicit. Will a BMI of 39.95 be considered under 40, or do you round up? Clarify any rounding approach.
+
+Such attention to detail prevents **unresolvable edge cases** where the code’s binning disagrees with the intended clinical guideline, leading to misclassification and confusion.
+
 ## Incorporating Authoritative Guidelines
 
 During the research phase, we may uncover important clinical practice guidelines that further inform how we categorize and interpret BMI data:
@@ -43,4 +53,4 @@ The information we gather during this research phase should then be used to **re
 
 ## Conclusion
 
-By diligently gathering knowledge from reliable sources (clinical guidelines, relevant software packages, and domain experts) and clarifying any uncertainties early on, you will enable the LLM to generate code that reflects **scientifically validated practices**. As a result, your subsequent workflow steps—such as code generation, review, and refinement—will be grounded in robust methods and aligned with real-world clinical and research standards.
+By diligently gathering knowledge from reliable sources (clinical guidelines, relevant software packages, and domain experts) and clarifying any uncertainties early on, you will enable the LLM to generate code that reflects **scientifically validated practices**. As a result, your subsequent workflow steps—such as code generation, review, and refinement—will be grounded in robust methods and aligned with real-world clinical and research standards. Crucially, be sure to address **edge cases** carefully, documenting how borderline BMI values are handled so that both **code** and **human interpretation** remain consistent.
