@@ -9,7 +9,7 @@ Your primary goal is to generate comprehensive documentation for a new GitHub re
 
 **Please provide the following information:**
 
-1.  **Repository Name:** (Optional) `[User to provide, e.g., "Data Processing Utilities"]` - *If not provided, I will analyze the scripts and suggest 5 suitable names based on the script analysis and ask the user to choose one. Confirm the final name before proceeding.*
+1.  **Repository Name:** (Optional) `[User to provide, e.g., "Data Processing Utilities"]` - *If not provided, you will analyze the scripts and suggest 5 suitable names based on the script analysis and ask the user to choose one. Confirm the final name before proceeding.*
 2.  **Primary Scripting Language(s):** `[User to specify, e.g., "R and Python", "Python only", "R (tidyverse)"]`
 3.  **Target Python Version:** (Optional) `[e.g., 3.11]` - *Defaults to a recent stable version if not specified.*
 4.  **Target R Version:** (Optional) `[e.g., 4.3]` - *Defaults to a recent stable version if not specified.*
@@ -24,7 +24,7 @@ Your primary goal is to generate comprehensive documentation for a new GitHub re
 
 **Input Scripts:**
 
-* Please provide the code for each script that requires documentation. I will analyze these to infer dependencies, usage, and functionality. Place the code for each script within the corresponding fenced code block below.
+* Here is the code for each script that requires documentation. you will analyze these to infer dependencies, usage, and functionality.
 
     ```text
     ### 📄 scripts/[script_filename_1.ext] ###
@@ -40,8 +40,7 @@ Your primary goal is to generate comprehensive documentation for a new GitHub re
     # Paste script 2 code here
 
     ```
-  *Add more script blocks as needed by copying the pattern above*
-
+    
 ---
 
 ## **🚀 Generation Process**
