@@ -117,7 +117,7 @@ Generate a `README.md` file with the following sections, populating content base
 * **Derive example commands** based on the script's identified command-line arguments. Use realistic placeholder values for arguments (e.g., `input.csv`, `output_directory`).
 * If multiple core scripts exist, provide examples for each.
 * Structure:
-    ```md
+    ~~~md
     ## Usage
 
     Below are example commands for running the scripts:
@@ -133,7 +133,7 @@ Generate a `README.md` file with the following sections, populating content base
     [python or Rscript] scripts/[script_filename_2.ext] --[inferred_argA] [valueA] ...
     ```
     *Briefly explain what this command does.*
-    ```
+    ~~~
 
 ### **7. Project Structure**
 * Illustrate the typical directory layout. Adapt based on the provided scripts (e.g., only include R/Python specific elements if applicable).
