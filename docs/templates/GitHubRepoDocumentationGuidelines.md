@@ -1,194 +1,158 @@
-## **🔹 Role Prompt**
-You are an expert AI assistant specialized in **GitHub repository documentation, tutorial generation, and best practices**.  
-You will:
-- Generate structured **README.md** and **/doc/<tool>.md** documentation for each script/use case.
-- Set up environments using **mamba (Conda) package manager**.
+# 📋 AI Task: Generate GitHub Repository Documentation
+
+## **🎯 Goal**
+Your primary goal is to generate comprehensive documentation for a new GitHub repository, including a `README.md` file and individual documentation files for specific tools/scripts within a `/docs/` directory. You will leverage your expertise in **GitHub best practices, technical writing, and environment setup using Mamba (Conda)**.
 
 ---
 
-## **🔹 Default Settings**
-- **GitHub Organization:** [FritscheLab](https://github.com/FritscheLab)  
-- **License:** [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html)  
-- **Year:** (Automatically set to the current year `2025`)  
+## **⚙️ Inputs & Configuration**
 
----
+**Please provide the following information:**
 
-## **🔹 README.md Generation**
-A **README.md** file serves as the **landing page** for any GitHub repository. The generated **README.md** should include:
+1.  **Repository Name:** (Optional) `[User to provide, e.g., "Data Processing Utilities"]` - *If not provided, I will analyze the scripts and suggest 5 suitable names before proceeding.*
+2.  **Primary Scripting Language(s):** `[User to specify, e.g., "R and Python", "Python only", "R (tidyverse)"]`
+3.  **Target Python Version:** (Optional) `[e.g., 3.11]` - *Defaults to a recent stable version if not specified.*
+4.  **Target R Version:** (Optional) `[e.g., 4.3]` - *Defaults to a recent stable version if not specified.*
+5.  **Developer Name / Maintainer:** `[User to provide, e.g., "Dr. Jane Doe"]`
 
-### **1️⃣ Title**
-- The repository name (or provided title).
-- Example:
-  ```md
-  # Data Processing Pipeline
-  ```
-  
-### **2️⃣ Description**
-- A **brief but informative overview** of the repository’s purpose, functionality, and key features.
-- Example:
-  ```md
-  ## Description
-  This repository provides a flexible and efficient data processing pipeline for large datasets.
-  It supports both **R (tidyverse/data.table)** and **Python (pandas)**, allowing users to clean, 
-  transform, and analyze structured datasets with ease.
-  ```
+**Default Settings (Can be overridden by user request):**
 
-### **3️⃣ Installation**
-- **Mamba (Conda) based setup** for both **R and Python** environments.
-- Example:
-  ```md
-  ## Installation
+* **GitHub Organization:** [FritscheLab](https://github.com/FritscheLab)
+* **License:** [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html)
+* **Current Year:** `[Dynamically Insert Current Year]`
+* **Current Date:** `[Dynamically Insert Current Date]`
 
-  To install dependencies and set up the environment, run the following:
+**Input Scripts:**
 
-  ```sh
-  # Install Conda (if not installed)
-  brew install mamba
+* Please provide the code for each script that requires documentation. I will analyze these to infer dependencies, usage, and functionality.
 
-  # Create & activate environment
-  mamba create -n my_project_env python=3.10 r-base=4.2 -y
-  mamba activate my_project_env
+```text
+### 📄 scripts/[script_filename_1.ext] ###
+<Paste script 1 code here>
 
-  # Install R packages
-  mamba install r-optparse r-tidyverse r-data.table -c conda-forge
+### 📄 scripts/[script_filename_2.ext] ###
+<Paste script 2 code here>
 
-  # Install Python packages
-  mamba install pandas argparse -c conda-forge
-  ```
-  ```
+# Add more script blocks as needed
 
-### **4️⃣ Requirements**
-- List all **dependencies** and their versions.
-- Example:
-  ```md
-  ## Requirements
+🚀 Generation Process
+Pre-computation Steps:
+ * Analyze Scripts: Parse the provided script(s) to:
+   * Identify imported libraries/packages (e.g., import pandas, library(tidyverse)).
+   * Identify command-line argument definitions (e.g., using argparse, optparse).
+   * Infer the main purpose and functionality based on code structure, comments, and function names.
+ * Repository Name: If a repository name was not provided in the inputs, suggest 5 suitable names based on the script analysis and ask the user to choose one. Confirm the final name before proceeding.
+Output Generation:
+ * Generate the README.md file according to the structure specified below.
+ * For each script provided, generate a corresponding /docs/[script_filename_base].md file using the specified structure.
+📄 README.md Structure
+Generate a README.md file with the following sections, populating content based on the inputs and script analysis:
+1. Title
+ * Use the chosen Repository Name.
+2. Badges (Optional but Recommended)
+ * Consider adding relevant badges (e.g., License, Build Status if applicable later). Self-correction: Add basic license badge.
+   [![License: GPL v3](https://www.google.com/search?q=https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-  - **Operating System:** macOS, Linux (Ubuntu)
-  - **Software:** Conda (Mamba) Package Manager
-  - **R Packages (if applicable):** `tidyverse`, `data.table`, `optparse`
-  - **Python Packages (if applicable):** `pandas`, `argparse`
-  ```
+3. Description
+ * Write a concise overview of the repository's purpose, the problem it solves, and its key features, informed by the script analysis. Mention the primary language(s) used.
+4. Installation
+ * Provide instructions using Mamba (Conda).
+ * Use the Repository Name to create a unique environment name (e.g., [RepositoryName]_env).
+ * Include commands to create the environment, specifying the target Python/R versions (use defaults if not provided).
+ * List the Mamba commands to install the inferred dependencies for both R and Python (as applicable), specifying -c conda-forge where appropriate.
+ * Recommend installing Mamba via Mambaforge/Miniforge: See [Mamba documentation](https://mamba.readthedocs.io/en/latest/installation.html) for installation instructions.
+ * Example Structure:
+   ## Installation
 
-### **5️⃣ Usage**
-- Include **example command-line executions**.
-- **For R (`tidyverse`, if applicable)**:
-  ```md
-  ### Running the R script (Tidyverse)
-  ```sh
-  Rscript process_data.R --data_file input.csv --output_dir results --id_col ID --date_col Date
-  ```
-  ```
-- **For R (`data.table`, if applicable)**:
-  ```md
-  ### Running the R script (Data.Table)
-  ```sh
-  Rscript process_data_dt.R --data_file input.csv --output_dir results --id_col ID --date_col Date --num_threads 4
-  ```
-  ```
-- **For Python (if applicable)**:
-  ```md
-  ### Running the Python script
-  ```sh
-  python process_data.py --data_file input.csv --output_dir results --id_col ID --date_col Date
-  ```
-  ```
+We recommend using the Mamba package manager for environment management. See [Mamba documentation](https://mamba.readthedocs.io/en/latest/installation.html) for installation options (like Mambaforge).
 
-### **6️⃣ Project Structure**
-- Explain the **repository’s directory structure**.
-- Example:
-  ```md
-  ## Project Structure
+1.  **Create and activate the Conda environment:**
+    ```sh
+    # Replace [python_version] and [r_version] with desired versions if needed
+    mamba create -n [RepositoryName]_env python=[python_version] r-base=[r_version] -y
+    mamba activate [RepositoryName]_env
+    ```
 
-  ```
-  📂 **my_project**  
-  ├── 📂 `data/`              # Example datasets  
-  ├── 📂 `scripts/`           # Processing scripts (Python, R)  
-  ├── 📂 `docs/`              # Additional documentation  
-  ├── 📜 `README.md`          # Project documentation  
-  ├── 📜 `LICENSE`            # GNU GPLv3 License  
-  └── 📜 `.gitignore`         # Files to be ignored by Git  
-  ```
-  ```
+2.  **Install required packages:**
+    ```sh
+    # Install R packages (example)
+    mamba install [inferred_r_package_1] [inferred_r_package_2] -c conda-forge
 
-### **7️⃣ Contributing**
-- Outline how users can **contribute**.
-- Example:
-  ```md
-  ## Contributing
+    # Install Python packages (example)
+    mamba install [inferred_python_package_1] [inferred_python_package_2] -c conda-forge
+    ```
 
-  Contributions are welcome! Please follow these steps:
-  
-  1. **Fork the repository**  
-  2. **Clone your fork**  
-  3. **Create a new branch** (`git checkout -b feature-branch`)  
-  4. **Make your changes** and commit (`git commit -m "Description"`)  
-  5. **Push to your fork** and create a **Pull Request (PR)**  
-  ```
+5. Requirements
+ * List the primary requirements.
+ * Operating System: Infer general compatibility (e.g., Linux, macOS - mention if Windows is known to be problematic or untested).
+ * Software: Mamba (Conda).
+ * Packages: List the key R and/or Python packages inferred from the scripts, potentially with versions if easily determined or specified in the environment creation.
+6. Usage
+ * Provide clear examples of how to run the main script(s).
+ * Derive example commands based on the script's identified command-line arguments. Use realistic placeholder values for arguments (e.g., input.csv, output_directory).
+ * If multiple core scripts exist, provide examples for each.
+ * Structure:
+   ## Usage
 
-### **8️⃣ License**
-- **Automatically generated section** based on the default repository settings.
-- Example:
-  ```md
-  ## License
+Below are example commands for running the scripts:
 
-  This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
-  ```
+### Running `[script_filename_1.ext]`
+```sh
+[python or Rscript] scripts/[script_filename_1.ext] --[inferred_arg1] [value1] --[inferred_arg2] [value2]
 
-### **9️⃣ Contact**
-- **How users can report issues or ask questions**.
-- Example:
-  ```md
-  ## Contact
-  
-  If you have any questions, please reach out to the Fritsche Lab team at [github.com/FritscheLab](https://github.com/FritscheLab).
-  ```
+   Briefly explain what this command does based on script analysis.
+   Running [script_filename_2.ext]
+   [python or Rscript] scripts/[script_filename_2.ext] --[inferred_argA] [valueA] ...
 
----
+   Briefly explain what this command does.
+   
 
-## **🔹 /doc/<tool>.md Generation**
-For tool-specific documentation inside the **`/doc`** directory, follow this structure:
+7. Project Structure
+ * Illustrate the typical directory layout. Adapt based on the provided scripts (e.g., only include R/Python specific elements if applicable).
+   ## Project Structure
 
-### **1️⃣ Tool Name**
-- Extract from the script or provided metadata.
+   📂 [RepositoryName]/
+   ├── 📁 data/               # Example or placeholder input data
+   ├── 📁 docs/               # Detailed documentation for each script
+   │   └── 📜 [script_filename_base].md
+   ├── 📁 scripts/            # Source code for the tools
+   │   └── 📜 [script_filename_1.ext]
+   ├── 📜 .gitignore          # Specifies intentionally untracked files git should ignore
+   ├── 📜 LICENSE             # [License Name, e.g., GNU GPLv3] License file
+   └── 📜 README.md           # This file
+   
+8. Contributing
+ * Include standard contribution guidelines (Fork, Branch, Commit, PR). Mention issue tracking on GitHub.
+9. License
+ * State the license clearly, linking to the license file or URL. Use the default setting unless overridden.
+   ## License
 
-### **2️⃣ Purpose**
-- Clearly describe **what the tool does**.
+This project is licensed under the terms of the [License Name]. See the [LICENSE](LICENSE) file for details or visit [License URL].
+Copyright (c) [Current Year], [GitHub Organization / Developer Name]
 
-### **3️⃣ Inputs & Outputs**
-- List **parameters, expected input formats, and output structure**.
+10. Contact
+ * Provide contact information or point to the GitHub repository for issues/questions.
+   ## Contact
 
-### **4️⃣ Usage Example**
-- Show example **command-line execution**.
+For questions, bug reports, or feature requests, please open an issue on the [GitHub Repository Issues page](https://github.com/[GitHub Organization]/[RepositoryName]/issues).
+Maintained by: [Developer Name / Maintainer] ([GitHub Organization Link])
 
-### **5️⃣ Best Practices**
-- Provide **guidelines for efficiency and best use**.
+📖 /docs/[script_filename_base].md Structure
+For each provided script (e.g., scripts/process_data.py), generate a corresponding documentation file (e.g., docs/process_data.md) with the following sections:
+1. Tool Name
+ * Use the base name of the script file (e.g., process_data.py).
+2. Purpose
+ * Analyze the script's code and comments/docstrings to provide a clear, concise description of what the script does.
+3. Inputs & Outputs
+ * Inputs:
+   * Arguments: List the command-line arguments identified from the script's argument parser (argparse, optparse, etc.). Include their names, expected data types (if discernible), and descriptions (from the parser's help text).
+   * Input Files: Describe the expected format of any input files (e.g., "CSV file with columns 'ID', 'Date', 'Value'").
+ * Outputs: Describe the files or results generated by the script (e.g., "Outputs a processed CSV file to the specified output directory," "Generates a plot named 'result.png'").
+4. Usage Example
+ * Provide a specific, detailed command-line example for this script, using its actual arguments derived during analysis. Explain the example.
+5. Best Practices / Notes
+ * (Optional but helpful) Include any tips for using the script effectively, potential limitations, or important assumptions based on script analysis (e.g., "Ensure input data is sorted by date," "Requires at least 8GB RAM for large datasets").
+6. Error Handling / Troubleshooting
+ * (Optional but helpful) List any common errors users might encounter and suggest solutions (e.g., "FileNotFoundError: Check input file path," "MemoryError: Try processing data in chunks or use a machine with more RAM"). This may require more sophisticated analysis or common patterns.
+Proceed with generating the documentation once the Repository Name is confirmed.
 
-### **6️⃣ Error Handling**
-- List **common errors and troubleshooting tips**.
-
----
-
-## scripts:
-
-### 📄 `scripts/<script_1.r>`
-```
-<paste your script here>
-```
-
-### 📄 `scripts/<script_1.r>`
-```
-<paste your script here>
-```
-
----
-
-## Additional information:
-
-Developer Name: <enter your name here>
-Date: <DD/MM/YYYY>
-
----
-
-## Repository Name
-
-Before generating the **README.md** and **/doc/<tool>.md** files, please generate 5 suitable names for this repository then ask me to provide my choice for the **repository name**, unless I have already provided it.
