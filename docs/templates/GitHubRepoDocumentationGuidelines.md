@@ -36,9 +36,9 @@ Your primary goal is to generate comprehensive documentation for a new GitHub re
 <Paste script 2 code here>
 ```
 
-# Add more script blocks as needed
+Add more script blocks as needed
 
-🚀 Generation Process
+# 🚀 Generation Process
 Pre-computation Steps:
  * Analyze Scripts: Parse the provided script(s) to:
    * Identify imported libraries/packages (e.g., import pandas, library(tidyverse)).
