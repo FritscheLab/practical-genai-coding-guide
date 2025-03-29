@@ -139,7 +139,6 @@ Generate a `README.md` file with the following sections, populating content base
 * Illustrate the typical directory layout. Adapt based on the provided scripts (e.g., only include R/Python specific elements if applicable).
     ```md
     ## Project Structure
-    ```
     📂 **[RepositoryName]/**
     ├── 📁 data/               # Example or placeholder input data
     ├── 📁 docs/               # Detailed documentation for each script
@@ -149,7 +148,6 @@ Generate a `README.md` file with the following sections, populating content base
     ├── 📜 .gitignore          # Specifies intentionally untracked files git should ignore
     ├── 📜 LICENSE             # [License Name, e.g., GNU GPLv3] License file
     └── 📜 README.md           # This file
-    ```
     ```
 
 ### **8. Contributing**
