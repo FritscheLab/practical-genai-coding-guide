@@ -26,12 +26,15 @@ Your primary goal is to generate comprehensive documentation for a new GitHub re
 
 * Please provide the code for each script that requires documentation. I will analyze these to infer dependencies, usage, and functionality.
 
-```text
 ### 📄 scripts/[script_filename_1.ext] ###
+```
 <Paste script 1 code here>
+```
 
 ### 📄 scripts/[script_filename_2.ext] ###
+```
 <Paste script 2 code here>
+```
 
 # Add more script blocks as needed
 
