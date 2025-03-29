@@ -102,13 +102,13 @@ Below are example commands for running the scripts:
 ### Running `[script_filename_1.ext]`
 ```sh
 [python or Rscript] scripts/[script_filename_1.ext] --[inferred_arg1] [value1] --[inferred_arg2] [value2]
+```
 
    Briefly explain what this command does based on script analysis.
    Running [script_filename_2.ext]
    [python or Rscript] scripts/[script_filename_2.ext] --[inferred_argA] [valueA] ...
 
    Briefly explain what this command does.
-   
 
 7. Project Structure
  * Illustrate the typical directory layout. Adapt based on the provided scripts (e.g., only include R/Python specific elements if applicable).
