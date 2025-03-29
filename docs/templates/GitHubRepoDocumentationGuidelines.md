@@ -40,7 +40,7 @@ Your primary goal is to generate comprehensive documentation for a new GitHub re
     # Paste script 2 code here
 
     ```
-    # Add more script blocks as needed by copying the pattern above
+  *Add more script blocks as needed by copying the pattern above*
 
 ---
 
