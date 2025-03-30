@@ -13,3 +13,10 @@ As you get closer to a satisfactory solution, you will often find yourself **fin
 Throughout this iterative process, it is important to **know when to stop** [76](../docs/References.md#ref76). Once you are satisfied that the code is correct, meaning it runs without errors and produces the expected outputs, and that it is reasonably efficient and readable, you can conclude the code generation phase. At this point, you can move on to the subsequent steps of refactoring and documenting your final solution. Recognizing when the code is "good enough" is a key skill that helps to prevent over-engineering and ensures that you are using your time effectively.
 
 In essence, this iterative journey of testing, reviewing, and refining is central to achieving a successful outcome when working with LLMs for coding tasks [81](../docs/References.md#ref81). It allows for continuous improvement and ensures that the final code not only addresses your research question but also meets the desired standards of quality and functionality. This process often mirrors the experience of collaborating with a human assistant, where ongoing feedback and adjustments are essential for reaching the best possible results.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 5 — Making It Better](Chapter05_MakingItBetter.md)
+- [➡️ Next Chapter: Chapter 7 — Standardization](Chapter07_Standardization.md)

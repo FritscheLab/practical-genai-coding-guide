@@ -299,3 +299,10 @@ Data sharing and collaboration are vital in science, and LLMs can help prepare d
 ---
 
 Each of these prompts shows how users in biostatistics, bioinformatics, and data science can engage LLMs to assist with diverse technical tasks—ranging from code generation to statistical reporting. By specifying the programming language or libraries and clarifying the output format (code snippet, explanation, or combination), one can leverage generative AI to save time, learn new techniques, and maintain reproducible workflows [(18)](../docs/References.md#ref18). As these examples illustrate, LLMs can act as coding assistants, statistical consultants, or “explainers.” With thoughtful prompt engineering—giving context, breaking tasks into steps, or requesting clarifications—the utility of LLMs in these domains is greatly enhanced [(14)](../docs/References.md#ref14).
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Appendix: Appendix A — Recommended LLM Tools](AppendixA_RecommendedLLMTools.md)
+- [➡️ Next Appendix: Appendix C — Further Reading](AppendixC_FurtherReading.md)

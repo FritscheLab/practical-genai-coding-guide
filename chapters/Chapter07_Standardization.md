@@ -64,3 +64,10 @@ Even after a script is refactored, it is absolutely crucial to **double-check fu
 ## Conclusion
 
 By combining **version control** practices described in Chapter 4 with a **lab-wide code template**, you can ensure that your LLM-generated scripts evolve into polished, consistent, and maintainable tools for your research workflows. This process promotes collaboration, enhances maintainability, and ultimately contributes to the overall quality and reproducibility of your lab's work. Employing AI assistance (e.g., the [R refactoring prompt](../docs/templates/R_CodeRefactoringPromptExample.md)) while diligently verifying functionality helps you streamline the refactoring process without sacrificing rigor.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 6 — The Iterative Journey](Chapter06_TheIterativeJourney.md)
+- [➡️ Next Chapter: Chapter 8 — Sharing Your Work](Chapter08_SharingYourWork.md)

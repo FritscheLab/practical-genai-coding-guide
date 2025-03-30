@@ -20,3 +20,10 @@ To further enhance your understanding and skills in using GenAI tools for coding
 
 - **Responsible AI and Ethics:**  
   - Materials from organizations and research institutions focusing on the ethical implications of using AI in research, including data privacy and bias detection.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Appendix: Appendix B — Prompt Library](AppendixB_PromptLibrary.md)
+- [➡️ Next Appendix: Appendix D — Project Plans & Templates](AppendixD_ProjectPlansAndTemplates.md)

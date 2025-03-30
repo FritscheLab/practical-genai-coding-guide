@@ -53,3 +53,8 @@ This file provides best practices for generating a well-structured GitHub reposi
 - **See file:** [GitHubRepoDocumentationGuidelines.md](templates/GitHubRepoDocumentationGuidelines.md)
 
 ---
+
+## 📚 Navigation
+
+- [⬅️ Previous Appendix: Appendix C — Further Reading](AppendixC_FurtherReading.md)
+- [⬅️ Back to README](../README.md)

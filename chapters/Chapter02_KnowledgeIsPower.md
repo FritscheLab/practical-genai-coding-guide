@@ -62,3 +62,10 @@ The information we gather during this research phase should then be used to **re
 ## Conclusion
 
 By diligently gathering knowledge from reliable sources (clinical guidelines, relevant software packages, and domain experts) and clarifying any uncertainties early on, you will enable the LLM to generate code that reflects **scientifically validated practices**. As a result, your subsequent workflow steps—such as code generation, review, and refinement—will be grounded in robust methods and aligned with real-world clinical and research standards. Crucially, be sure to address **edge cases** carefully, documenting how borderline BMI values are handled so that both **code** and **human interpretation** remain consistent.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 1 — Plan & Context](Chapter01_PlanAndContext.md)
+- [➡️ Next Chapter: Chapter 3 — The AI Assistant](Chapter03_TheAIAssistant.md)

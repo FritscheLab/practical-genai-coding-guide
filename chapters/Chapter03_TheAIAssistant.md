@@ -57,3 +57,10 @@ Below is a short example showing how you might combine the plan and the template
 > The LLM then evaluates both your project plan (which outlines how to handle EHR data) and your desired coding format. Once it understands them, it will produce an R script aligned with your advanced plan.
 
 In conclusion, **effective prompting is a skill honed with practice** [21](../docs/References.md#ref21). By adhering to the principles of clarity, specificity, and providing sufficient context—often by directly including your project plan and the coding prompt template in the conversation—you can harness the LLM’s code-generation capabilities to significantly accelerate your research and coding workflows. The more specific and clear your prompt, the better the code generation will align with your needs.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 2 — Knowledge is Power](Chapter02_KnowledgeIsPower.md)
+- [➡️ Next Chapter: Chapter 4 — Critical Eye](Chapter04_CriticalEye.md)

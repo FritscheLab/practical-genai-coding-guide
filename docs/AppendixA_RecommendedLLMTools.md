@@ -14,3 +14,10 @@ Platforms designed to facilitate prompt engineering and interaction with LLMs ca
 
 - Tools that offer a playground environment for testing different prompts and model parameters.  
 - Platforms that help organize and manage collections of effective prompts for various tasks.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Back to README](../README.md)
+- [➡️ Next Appendix: Appendix B — Prompt Library](AppendixB_PromptLibrary.md)

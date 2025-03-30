@@ -18,3 +18,10 @@ To further illustrate this process, consider some **example refinement prompts**
 In essence, code refinement is an integral part of the LLM-assisted workflow [21](../docs/References.md#ref21). By iteratively addressing issues and adding features through clear and specific prompts, researchers can mold the AI-generated code into a solution that not only works but also meets their specific research needs and adheres to high standards of quality and functionality. This iterative process allows for a collaborative evolution of the code, where the LLM acts as a helpful assistant guided by your expertise.
 
 Remember to commit or push each refined version to your repository. This incremental approach keeps a clear record of the evolution of your code and ensures that all your improvements—small or large—are captured and can be revisited or merged as needed.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 4 — Critical Eye](Chapter04_CriticalEye.md)
+- [➡️ Next Chapter: Chapter 6 — The Iterative Journey](Chapter06_TheIterativeJourney.md)

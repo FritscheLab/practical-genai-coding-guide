@@ -30,3 +30,10 @@ To see how a high-level plan can evolve over time, refer to these example projec
   A comprehensive plan that integrates demographic data, applies race-specific BMI categorizations, and includes extensive summary reporting.
 
 These examples illustrate how an initial idea can be refined from a broad outline into a structured, domain-specific project plan that supports effective LLM utilization.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Back to README](../README.md)
+- [➡️ Next Chapter: Chapter 2 — Knowledge is Power](Chapter02_KnowledgeIsPower.md)

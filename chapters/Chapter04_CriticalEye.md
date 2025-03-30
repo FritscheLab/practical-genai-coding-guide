@@ -72,3 +72,10 @@ By using version control, you ensure that:
 Throughout this entire *review and iteration* process, treat the LLM’s output as a **starting point**, not a final solution. Your domain expertise and thorough inspection are essential for making sure the code is correct, efficient, and aligned with your objectives. By combining that critical eye with proper version control, you can accelerate development without sacrificing long-term maintainability and reproducibility.
 
 The overarching principle in this critical review phase is to treat the LLM’s output as a valuable starting point, but not as a final solution. Our domain expertise, combined with a meticulous and critical review of the generated code, is absolutely essential for ensuring that the final script is correct, efficient, and ultimately meets the objectives of our research. We should always verify the AI’s output, as it can be a tremendous time-saver but may also be over-confident and incorrect in certain areas. **This careful review, coupled with Git-based version tracking, ensures that we catch any mistakes before they become significant problems in our analysis** while also preserving a detailed history of each iteration.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 3 — The AI Assistant](Chapter03_TheAIAssistant.md)
+- [➡️ Next Chapter: Chapter 5 — Making It Better](Chapter05_MakingItBetter.md)

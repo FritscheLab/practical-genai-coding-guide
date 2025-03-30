@@ -45,3 +45,10 @@ This data dictionary serves as a crucial reference for anyone who will be workin
 Once the LLM has provided you with initial drafts of the documentation, it is vital to **review and polish the docs** [48](../docs/References.md#ref48). Carefully edit the AI-generated text for accuracy and clarity. You might need to add specific examples to illustrate how to use the script, provide additional context about the research question or the data, or correct any minor inaccuracies that the LLM might have introduced. Remember that while the AI can significantly speed up the writing process, human oversight is essential to ensure the final documentation is of high quality and truly reflects the work that was done.
 
 In conclusion, generating thorough and user-friendly documentation is a critical final step in any research workflow. By leveraging the capabilities of LLMs to draft initial documentation—whether with your own prompts or via [our guidelines prompt](../docs/templates/GitHubRepoDocumentationGuidelines.md)—and then taking the time to carefully review and polish these drafts, you can significantly enhance the transparency, reproducibility, and overall impact of your research. This ensures that your work is not only sound but also readily accessible and understandable to the wider scientific community.
+
+---
+
+## 📚 Navigation
+
+- [⬅️ Previous Chapter: Chapter 7 — Standardization](Chapter07_Standardization.md)
+- [⬅️ Back to README](../README.md)
