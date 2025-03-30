@@ -14,12 +14,15 @@ To ensure that the LLM's output is directly usable and aligns with our needs, we
 
 For instance, we could instruct the LLM to:
 
-> *"Return an R script that performs the following steps and includes comments explaining each section of the code:  
->  1. Reads the BMI data from a TSV file  
->  2. Filters out implausible heights and weights  
->  3. Selects a single representative BMI measurement per person  
->  4. Categorizes BMI based on pre-defined thresholds  
->  5. Outputs a cleaned dataset and a summary table."*
+**Example Prompt** 
+~~~markdown
+Return an R script that performs the following steps and includes comments explaining each section of the code:  
+1. Reads the BMI data from a TSV file  
+2. Filters out implausible heights and weights  
+3. Selects a single representative BMI measurement per person  
+4. Categorizes BMI based on pre-defined thresholds  
+5. Outputs a cleaned dataset and a summary table.
+~~~
 
 To further enhance the effectiveness of our prompting, we can leverage **prompt templates** [19](../docs/References.md#ref19). The provided file [CodingPromptForRScript.md](../docs/templates/CodingPromptForRScript.md) is an excellent example of a structured approach to guide the LLM. This template begins by assigning the LLM the role of an expert R programmer with experience in production-quality scripts using specific libraries like `data.table` and `optparse`. It then instructs the LLM to:
 
@@ -37,24 +40,22 @@ To further enhance the effectiveness of our prompting, we can leverage **prompt 
 
 Finally, to solidify our understanding of how to translate our planning and research into an actionable set of instructions, it is helpful to consider an **example prompt for BMI harmonization**. Such a prompt would incorporate the overarching goal of harmonizing BMI data, the specific context of EHR data with its columns and format, the sub-tasks identified in Chapter 1 (reading, cleaning, filtering, selecting, categorizing, outputting), and any relevant research insights from Chapter 2 (e.g., specific BMI category definitions or outlier thresholds). 
 
-Below is a short example showing how you might combine the plan and the template:
+Below is a short example showing how you might combine the plan into a prompt template:
 
-> **Example**  
-> 
-> ```
-> [SYSTEM PROMPT]:
-> You are an expert R programmer with deep experience in writing production-quality scripts using `data.table` and `optparse`.
-> 
-> Here is my project plan:
-> -- paste entire contents of docs/templates/ProjectPlan_Advanced.md here --
-> 
-> Here is a coding prompt template:
-> -- paste entire contents of docs/templates/CodingPromptForRScript.md here --
-> 
-> Please review the plan, ask any clarifying questions, and then generate an R script that follows the instructions precisely. 
-> ```
->
-> The LLM then evaluates both your project plan (which outlines how to handle EHR data) and your desired coding format. Once it understands them, it will produce an R script aligned with your advanced plan.
+**Example Prompt Template**  
+
+~~~markdown
+You are an expert R programmer with deep experience in writing production-quality scripts using `data.table` and `optparse`.
+
+Here is my project plan:
+```markdown
+<paste entire contents of docs/templates/ProjectPlan_Advanced.md here>
+```
+
+Please review the plan, ask any clarifying questions, and then generate an R script that follows the instructions precisely. 
+~~~
+
+The LLM then evaluates both your project plan (which outlines how to handle EHR data) and your desired coding format. Once it understands them, it will produce an R script aligned with your advanced plan.
 
 In conclusion, **effective prompting is a skill honed with practice** [21](../docs/References.md#ref21). By adhering to the principles of clarity, specificity, and providing sufficient context—often by directly including your project plan and the coding prompt template in the conversation—you can harness the LLM’s code-generation capabilities to significantly accelerate your research and coding workflows. The more specific and clear your prompt, the better the code generation will align with your needs.
 
