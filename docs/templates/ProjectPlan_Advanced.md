@@ -15,8 +15,8 @@ In addition, a separate demographics file is available that provides key backgro
 - **age**: Age in years (with invalid values set to NA)  
 - **age_bin**: Age category (e.g., <18, 18-34, etc.)  
 - **deceased**: Indicator if the person is deceased  
-- **race_clean**: Race (with NA for 'Patient Refused', 'Unknown', or blank)  
-- **ethnicity_clean**: Ethnicity (with NA for 'Patient Refused', 'Unknown', or blank)  
+- **race**: Race (with NA for 'Patient Refused', 'Unknown', or blank)  
+- **ethnicity**: Ethnicity (with NA for 'Patient Refused', 'Unknown', or blank)  
 - **race_ethnicity**: Combined Race and Ethnicity  
 - **race_ethnicity_harmonized**: Harmonized classification (e.g., Non-Hispanic White, Non-Hispanic Black, Non-Hispanic Asian/Pacific Islander/Native American, Other)  
 - **sex_gender**: Consolidated Sex/Gender (using sex assigned at birth if available)  
@@ -34,7 +34,7 @@ For processing the height and weight data, the R package **`growthcleanr`** will
      - Read the BMI file using the appropriate delimiter (e.g., tab).  
      - Convert columns to appropriate data types, especially the measurement dates.  
    - **Demographic Data**:  
-     - Load the demographics file ensuring proper parsing of key fields such as `person_id`, `sex_gender`, `date_of_birth`, and `race_clean`.  
+     - Load the demographics file ensuring proper parsing of key fields such as `person_id`, `sex_gender`, `date_of_birth`, and `race`.  
      - Compute `agedays` (age in days) for each individual to support processing with `growthcleanr`.
 
 2. **Data Cleaning and Filtering**  
@@ -63,7 +63,7 @@ For processing the height and weight data, the R package **`growthcleanr`** will
           - Obesity II: 35 ≤ BMI < 40 kg/m² 
           - Obesity III: BMI ≥ 40 kg/m² 
      - **Race-Specific**:  
-       For individuals identified (using `race_clean`) as Black, Asian, Native American, or Pacific Islander:  
+       For individuals identified (using `race`) as Black, Asian, Native American, or Pacific Islander:  
           - Underweight: BMI < 18.5 kg/m² 
           - Normal: 18.5 ≤ BMI < 23 kg/m² 
           - Overweight: BMI >= 23 AND < 27.5 kg/m²  
@@ -88,7 +88,7 @@ For processing the height and weight data, the R package **`growthcleanr`** will
 1. **Cleaned Dataset**  
    - A TSV file containing one representative row per person, which includes:  
      - The “typical” BMI measurement along with its corresponding height, weight, and measurement date.  
-     - Demographic information (including `date_of_birth`, `sex_gender`, computed `agedays`, and `race_clean`).  
+     - Demographic information (including `date_of_birth`, `sex_gender`, computed `agedays`, and `race`).  
      - Categorical variables for BMI (both general and race-specific), height, and weight.
 
 2. **Summary Report**  
