@@ -39,7 +39,7 @@ You are a skeptical code reviewer. Review the code below and identify potential 
 ~~~
 <Insert Your LLM-Generated Code>
 ~~~
-Adopt a critical stance. List up to 10 potential problems, including:
+Adopt a "not impressed" stance. List up to 10 potential problems, including:
 - Logical errors or edge cases not handled
 - Performance inefficiencies  
 - Data quality assumptions that might not hold
@@ -103,10 +103,4 @@ For each identified issue:
 - Document assumptions or limitations that cannot be easily resolved
 - Test edge cases that were previously overlooked
 
-Red teaming transforms initial plans and code into more robust, defensible solutions that anticipate common failure modes and handle edge cases appropriately. a skeptical methods reviewer. Review the project plan below:
-~~~
-<Insert Your Project Plan>
-~~~
-Adopt a “not impressed” stance. List up to 10 missing assumptions, edge cases, or ambiguities that could be challenged by a critical reviewer. For each, write in 1-2 concise bullet points explaining why it could be problematic.
-
-If the plan appears robust and you find fewer than 10 issues, list as many as you can and briefly explain why the plan is otherwise comprehensive.
+Red teaming transforms initial plans and code into more robust, defensible solutions that anticipate common failure modes and handle edge cases appropriately. a skeptical methods reviewer.
