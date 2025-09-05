@@ -67,11 +67,51 @@ By using version control, you ensure that:
 - Later, if you realize a certain step inadvertently introduced a bug or removed an important feature, you can **pinpoint and revert** that exact commit.  
 - Collaboration and reproducibility become much simpler, since others can pull the repository and immediately see the timeline of LLM-driven changes.
 
+## Red Teaming Your LLM-Generated Code
+
+Just as we applied red teaming to strengthen project plans in Chapter 1, we can also use this adversarial approach to critically evaluate LLM-generated code. **Red teaming your code** involves systematically challenging the implementation to identify potential flaws, edge cases, or methodological issues that might not be immediately apparent.
+
+Consider using the LLM itself as a **skeptical code reviewer** by adapting the red teaming approach from the [RedTeamingPromptExample.md](../docs/templates/RedTeamingPromptExample.md) template:
+
+```markdown
+You are a skeptical code reviewer. Review the R script below and identify potential issues:
+~~~
+<Insert Your LLM-Generated Code>
+~~~
+Adopt a critical stance. List up to 10 potential problems, including:
+- Logical errors or edge cases not handled
+- Performance inefficiencies
+- Data quality assumptions that might not hold
+- Missing validation steps
+- Potential for incorrect results
+For each issue, explain why it could be problematic.
+```
+
+This adversarial code review can reveal:
+
+- **Edge case handling**: Missing checks for empty datasets, malformed dates, or unexpected data types
+- **Performance issues**: Inefficient loops, unnecessary data copying, or memory-intensive operations
+- **Domain-specific oversights**: Failure to handle clinical contexts, measurement artifacts, or data collection biases
+- **Statistical validity**: Inappropriate methods, missing assumptions, or inadequate validation
+- **Error propagation**: Situations where early mistakes compound into incorrect final results
+- **Demographic complexity**: Oversimplified handling of population heterogeneity, missing demographic categories, or inappropriate application of group-specific thresholds
+
+For example, when red teaming BMI cleaning code, a skeptical reviewer might identify that the script assumes all height measurements are in centimeters when EHR data often contains mixed units, or that it fails to account for physiologically implausible BMI values that suggest data entry errors. A more sophisticated critique might reveal that the code applies race-specific BMI categories without properly handling missing race data, multiracial individuals, or validating that the evidence supporting different thresholds actually applies to the specific populations in your dataset.
+
+**Implementing red teaming feedback** is essential. For each identified issue:
+- Determine if it represents a real risk to your analysis
+- Modify the code to address legitimate concerns
+- Add validation checks or error handling where appropriate
+- Document assumptions or limitations that cannot be easily resolved
+- Test edge cases that were previously overlooked
+
+This red teaming process transforms your initial LLM-generated code into a more robust, defensible implementation that anticipates common failure modes and handles edge cases appropriately.
+
 ## Key Principle
 
-Throughout this entire *review and iteration* process, treat the LLM’s output as a **starting point**, not a final solution. Your domain expertise and thorough inspection are essential for making sure the code is correct, efficient, and aligned with your objectives. By combining that critical eye with proper version control, you can accelerate development without sacrificing long-term maintainability and reproducibility.
+Throughout this entire *review and iteration* process, treat the LLM's output as a **starting point**, not a final solution. Your domain expertise and thorough inspection are essential for making sure the code is correct, efficient, and aligned with your objectives. By combining that critical eye with proper version control, you can accelerate development without sacrificing long-term maintainability and reproducibility.
 
-The overarching principle in this critical review phase is to treat the LLM’s output as a valuable starting point, but not as a final solution. Our domain expertise, combined with a meticulous and critical review of the generated code, is absolutely essential for ensuring that the final script is correct, efficient, and ultimately meets the objectives of our research. We should always verify the AI’s output, as it can be a tremendous time-saver but may also be over-confident and incorrect in certain areas. **This careful review, coupled with Git-based version tracking, ensures that we catch any mistakes before they become significant problems in our analysis** while also preserving a detailed history of each iteration.
+The overarching principle in this critical review phase is to treat the LLM's output as a valuable starting point, but not as a final solution. Our domain expertise, combined with a meticulous and critical review of the generated code, is absolutely essential for ensuring that the final script is correct, efficient, and ultimately meets the objectives of our research. We should always verify the AI's output, as it can be a tremendous time-saver but may also be over-confident and incorrect in certain areas. **This careful review, coupled with Git-based version tracking and red teaming validation, ensures that we catch any mistakes before they become significant problems in our analysis** while also preserving a detailed history of each iteration.
 
 ---
 

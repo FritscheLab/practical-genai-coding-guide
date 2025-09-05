@@ -12,7 +12,40 @@ Finally, before you even begin to prompt an LLM, it is essential to **set succes
 
 Even at this initial planning stage, LLMs themselves can be valuable tools. You can **leverage LLMs in the planning phase** by prompting them to help brainstorm potential sub-tasks or to consider challenges you might encounter. For example, you could ask: "Based on the goal of harmonizing BMI data from EHR files, what are the typical sub-tasks involved in data cleaning and summarization?" The responses from the LLM can offer valuable suggestions and help you structure your workflow more effectively.
 
-In essence, this foundational planning phase is crucial for setting the stage for effective LLM utilization. A well-defined plan, coupled with a thorough understanding of the context, will guide your subsequent interactions with the AI assistant and ensure that the generated code and analysis are relevant, accurate, and aligned with your research objectives. Clarity at this stage ensures that both you and the AI are working toward solving the right problem.
+## Red Teaming Your Project Plan
+
+Once you have developed a comprehensive project plan, an invaluable technique is to **red team** your plan before proceeding to implementation. Red teaming involves adopting an adversarial perspective to identify potential weaknesses, assumptions, or edge cases that could undermine your analysis. This critical review process can reveal blind spots and help you strengthen your methodology before investing time in coding.
+
+You can use an LLM as a **skeptical methods reviewer** to red team your project plan. Consider using a prompt like the one shown in the [RedTeamingPromptExample.md](../docs/templates/RedTeamingPromptExample.md) template:
+
+```markdown
+You are a skeptical methods reviewer. Review the project plan below:
+~~~
+<Insert Your Project Plan>
+~~~
+Adopt a "not impressed" stance. List up to 10 missing assumptions, edge cases, or ambiguities that could be challenged by a critical reviewer. For each, write in 1-2 concise bullet points explaining why it could be problematic.
+```
+
+This adversarial approach can uncover issues such as:
+- **Methodological gaps**: Missing considerations for data quality, outlier detection thresholds, or validation approaches
+- **Domain-specific oversight**: Failure to account for clinical contexts (e.g., pregnancy, edema, bariatric surgery) that affect measurements
+- **Technical assumptions**: Presumptions about data standardization, unit consistency, or temporal relationships
+- **Definitional ambiguities**: Vague terms like "typical" measurements or "extreme outliers" that lack operational definitions
+- **Population-specific considerations**: Oversimplified application of demographic-specific thresholds without considering evidence heterogeneity, data quality issues, or missing category handling
+
+For example, when red teaming a BMI harmonization plan, a skeptical reviewer might identify that the plan lacks clear age-stratified analysis pipelines (e.g., "Your plan mentions using `growthcleanr` but doesn't specify whether you'll use BMI-for-age percentiles for pediatric participants (ages 2-19) versus adult BMI categories for ages 20+, which could lead to inappropriate categorization across age groups"), or that selecting "median BMI" without considering clinical context or temporal windows could introduce systematic bias.
+
+A particularly sophisticated critique might focus on **population-specific methodological concerns**: "Your plan applies race-specific BMI cut points to 'Black, Asian, Native American, or Pacific Islander' populations using a single scheme, but evidence for lower BMI thresholds is most consistent for specific Asian subgroups rather than all listed populations. Additionally, EHR race data is notoriously noisy, multiracial identities are increasingly common, and your plan doesn't specify how missing, 'Other,' or harmonized race categories will be handled. This could lead to misclassification and systematic bias in BMI categorization."
+
+**Acting on red teaming feedback** is crucial. Review each identified issue and determine whether to:
+- Refine your methodology to address the concern
+- Add explicit assumptions or limitations to your documentation
+- Implement additional validation steps
+- Modify your success criteria
+
+This red teaming process transforms your initial plan into a more robust, defensible methodology that anticipates common criticisms and addresses potential pitfalls before they occur in your analysis.
+
+In essence, this foundational planning phase is crucial for setting the stage for effective LLM utilization. A well-defined plan, coupled with a thorough understanding of the context and strengthened through red teaming, will guide your subsequent interactions with the AI assistant and ensure that the generated code and analysis are relevant, accurate, and aligned with your research objectives. Clarity at this stage ensures that both you and the AI are working toward solving the right problem.
 
 ---
 
@@ -29,7 +62,10 @@ To see how a high-level plan can evolve over time, refer to these example projec
 - **[ProjectPlan_Advanced.md](../docs/templates/ProjectPlan_Advanced.md)**  
   A comprehensive plan that integrates demographic data, applies race-specific BMI categorizations, and includes extensive summary reporting.
 
-These examples illustrate how an initial idea can be refined from a broad outline into a structured, domain-specific project plan that supports effective LLM utilization.
+- **[RedTeamingPromptExample.md](../docs/templates/RedTeamingPromptExample.md)**  
+  A template for conducting adversarial review of your project plans to identify potential methodological weaknesses and edge cases.
+
+These examples illustrate how an initial idea can be refined from a broad outline into a structured, domain-specific project plan that supports effective LLM utilization, and how red teaming can strengthen your methodology before implementation.
 
 ---
 
